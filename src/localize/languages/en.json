@@ -5,6 +5,8 @@
     "description": "Meteoalarm card warns you about current weather events.",
     "warning": "Warning",
     "expected": "Expected",
+    "from": "From",
+    "until": "Until",
     "unavailable": {
       "long": "Integration is unavailable",
       "short": "Unavailable"
@@ -28,6 +30,8 @@
     "hide_when_no_warning": "Hide when there are no warnings",
     "hide_caption": "Hide caption",
     "disable_swiper": "Disable alerts swiper",
+    "show_description": "Show alert description",
+    "show_validity_period": "Show validity period",
     "description": {
       "start": "Selected integration creates multiple entities.",
       "current_expected": "First one with the current events and the second one with future ones.",

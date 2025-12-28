@@ -87,6 +87,21 @@ export default css`
 		margin-left: 5px;
 	}
 
+	.description {
+		padding: 0 28px 16px 28px;
+		font-size: 14px;
+		line-height: 1.4;
+		text-align: center;
+		white-space: normal;
+	}
+
+	.validity-period {
+		padding: 0 28px 16px 28px;
+		font-size: 12px;
+		text-align: center;
+		opacity: 0.9;
+	}
+
 	.headline-narrow,
 	.headline-verynarrow {
 		display: none;

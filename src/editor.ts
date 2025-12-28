@@ -75,6 +75,14 @@ export class MeteoalarmCardCardEditor
 		return this._config?.scaling_mode || 'headline_and_scale';
 	}
 
+	get _show_description(): boolean {
+		return this._config?.show_description || false;
+	}
+
+	get _show_validity_period(): boolean {
+		return this._config?.show_validity_period || false;
+	}
+
 	protected render(): TemplateResult | void {
 		if (!this.hass) {
 			return html``;
@@ -202,6 +210,24 @@ export class MeteoalarmCardCardEditor
 					<mwc-switch
 						.checked=${this._hide_when_no_warning !== false}
 						.configValue=${'hide_when_no_warning'}
+						@change=${this._valueChanged}
+					></mwc-switch>
+				</mwc-formfield>
+
+				<!-- Show description -->
+				<mwc-formfield .label=${localize('editor.show_description')}>
+					<mwc-switch
+						.checked=${this._show_description !== false}
+						.configValue=${'show_description'}
+						@change=${this._valueChanged}
+					></mwc-switch>
+				</mwc-formfield>
+
+				<!-- Show validity period -->
+				<mwc-formfield .label=${localize('editor.show_validity_period')}>
+					<mwc-switch
+						.checked=${this._show_validity_period !== false}
+						.configValue=${'show_validity_period'}
 						@change=${this._valueChanged}
 					></mwc-switch>
 				</mwc-formfield>

@@ -21,6 +21,8 @@ type MeteoalarmEntity = HassEntity & {
 		severity?: string;
 		headline?: string;
 		description?: string;
+		onset?: string;
+		expires?: string;
 		attribution: string;
 	};
 };
@@ -72,6 +74,9 @@ export default class Meteoalarm implements MeteoalarmIntegration {
 			severity,
 			awareness_type: awarenessType,
 			awareness_level: awarenessLevel,
+			description,
+			onset,
+			expires,
 		} = entity.attributes;
 
 		let event: MeteoalarmEventType | undefined;
@@ -102,6 +107,9 @@ export default class Meteoalarm implements MeteoalarmIntegration {
 				headline: eventHeadline || headline,
 				level: level,
 				event: event || MeteoalarmEventType.Unknown,
+				description: description,
+				onset: onset,
+				expires: expires,
 			},
 		];
 	}
