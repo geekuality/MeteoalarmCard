@@ -327,14 +327,16 @@ export class MeteoalarmCard extends LitElement {
 											entity_id=${ifDefined(event.entity?.entity_id)}
 										>
 											<div class="content">
-												${this.renderMainIcon(event.icon)} ${this.renderHeadlines(event.headlines)}
+												<div class="content-header">
+													${this.renderMainIcon(event.icon)} ${this.renderHeadlines(event.headlines)}
+												</div>
+												${this.config.show_description && event.description
+													? this.renderDescription(event.description)
+													: ''}
+												${this.config.show_validity_period
+													? this.renderValidityPeriod(event.onset, event.expires)
+													: ''}
 											</div>
-											${this.config.show_description && event.description
-												? this.renderDescription(event.description)
-												: ''}
-											${this.config.show_validity_period
-												? this.renderValidityPeriod(event.onset, event.expires)
-												: ''}
 											${event.caption && event.captionIcon
 												? html`
 														<div class="caption">
