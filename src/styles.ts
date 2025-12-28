@@ -50,7 +50,7 @@ export default css`
 	.content {
 		display: flex;
 		padding: 36px 28px;
-		align-items: center;
+		align-items: flex-start;
 	}
 
 	.text-content {
