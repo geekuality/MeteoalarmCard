@@ -57,6 +57,7 @@ export default css`
 		display: flex;
 		flex-direction: column;
 		flex: 1;
+		margin-left: 18px;
 	}
 
 	.main-icon {
@@ -70,7 +71,6 @@ export default css`
 		font-size: var(--headline-font-size);
 		line-height: normal;
 		margin: auto;
-		margin-left: 18px;
 		text-align: center;
 		overflow: hidden;
 		white-space: nowrap;
