@@ -49,13 +49,14 @@ export default css`
 
 	.content {
 		display: flex;
-		flex-direction: column;
 		padding: 36px 28px;
+		align-items: center;
 	}
 
-	.content-header {
+	.text-content {
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		flex: 1;
 	}
 
 	.main-icon {
@@ -95,7 +96,7 @@ export default css`
 	}
 
 	.description {
-		margin-top: 16px;
+		margin-top: 4px;
 		font-size: var(--description-font-size);
 		line-height: 1.4;
 		text-align: center;
@@ -103,7 +104,7 @@ export default css`
 	}
 
 	.validity-period {
-		margin-top: 8px;
+		margin-top: 4px;
 		font-size: var(--validity-period-font-size);
 		text-align: center;
 		opacity: 0.9;
