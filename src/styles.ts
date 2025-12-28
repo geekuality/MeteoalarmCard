@@ -67,10 +67,8 @@ export default css`
 	}
 
 	.headline {
-		flex: 1;
 		font-size: var(--headline-font-size);
 		line-height: normal;
-		margin: auto;
 		text-align: center;
 		overflow: hidden;
 		white-space: nowrap;
