@@ -49,7 +49,12 @@ export default css`
 
 	.content {
 		display: flex;
+		flex-direction: column;
 		padding: 36px 28px;
+	}
+
+	.content-header {
+		display: flex;
 		justify-content: center;
 	}
 
@@ -90,7 +95,7 @@ export default css`
 	}
 
 	.description {
-		padding: 0 28px 16px 28px;
+		margin-top: 16px;
 		font-size: var(--description-font-size);
 		line-height: 1.4;
 		text-align: center;
@@ -98,7 +103,7 @@ export default css`
 	}
 
 	.validity-period {
-		padding: 0 28px 16px 28px;
+		margin-top: 8px;
 		font-size: var(--validity-period-font-size);
 		text-align: center;
 		opacity: 0.9;
