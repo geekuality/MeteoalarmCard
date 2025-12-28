@@ -25,6 +25,8 @@ export interface MeteoalarmCardConfig extends LovelaceCardConfig {
 	scaling_mode?: string;
 	ignored_events?: string[];
 	ignored_levels?: string[];
+	show_description?: boolean;
+	show_validity_period?: boolean;
 
 	tap_action?: ActionConfig;
 	hold_action?: ActionConfig;
@@ -85,6 +87,9 @@ export interface MeteoalarmAlert {
 	level: MeteoalarmLevelType;
 	headline?: string;
 	kind?: MeteoalarmAlertKind;
+	description?: string;
+	onset?: string;
+	expires?: string;
 	_entity?: HassEntity;
 }
 
@@ -101,6 +106,9 @@ export interface MeteoalarmAlertParsed {
 	headlines: string[];
 	captionIcon?: string;
 	caption?: string;
+	description?: string;
+	onset?: string;
+	expires?: string;
 	entity?: HassEntity;
 }
 

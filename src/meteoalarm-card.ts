@@ -30,6 +30,7 @@ import {
 	MeteoalarmIntegrationEntityType,
 	MeteoalarmScalingMode,
 } from './types';
+import { Utils } from './utils';
 
 // eslint-disable-next-line no-console
 console.info(
@@ -328,6 +329,12 @@ export class MeteoalarmCard extends LitElement {
 											<div class="content">
 												${this.renderMainIcon(event.icon)} ${this.renderHeadlines(event.headlines)}
 											</div>
+											${this.config.show_description && event.description
+												? this.renderDescription(event.description)
+												: ''}
+											${this.config.show_validity_period
+												? this.renderValidityPeriod(event.onset, event.expires)
+												: ''}
 											${event.caption && event.captionIcon
 												? html`
 														<div class="caption">
@@ -399,6 +406,30 @@ export class MeteoalarmCard extends LitElement {
 				icon="mdi:${icon}"
 			></ha-icon>
 		`;
+	}
+
+	private renderDescription(description: string): TemplateResult {
+		return html`<div class="description">${description}</div>`;
+	}
+
+	private renderValidityPeriod(onset?: string, expires?: string): TemplateResult {
+		if (!onset && !expires) {
+			return html``;
+		}
+
+		const formattedOnset = onset ? Utils.formatLocalTime(onset) : '';
+		const formattedExpires = expires ? Utils.formatLocalTime(expires) : '';
+
+		let validityText = '';
+		if (formattedOnset && formattedExpires) {
+			validityText = `${formattedOnset} - ${formattedExpires}`;
+		} else if (formattedOnset) {
+			validityText = `${localize('common.from')}: ${formattedOnset}`;
+		} else if (formattedExpires) {
+			validityText = `${localize('common.until')}: ${formattedExpires}`;
+		}
+
+		return html`<div class="validity-period">${validityText}</div>`;
 	}
 
 	private setCardMargin(showMargin: boolean): void {

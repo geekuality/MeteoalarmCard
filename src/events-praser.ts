@@ -68,6 +68,9 @@ class EventsParser {
 				headlines: headlines,
 				caption: caption,
 				captionIcon: captionIcon,
+				description: alert.description,
+				onset: alert.onset,
+				expires: alert.expires,
 			});
 		}
 

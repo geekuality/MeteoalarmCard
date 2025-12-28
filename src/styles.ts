@@ -10,6 +10,8 @@ export default css`
 		--text-color-active: white;
 		--headline-font-size: 22px;
 		--caption-font-size: 13px;
+		--description-font-size: 14px;
+		--validity-period-font-size: 12px;
 
 		--inactive-background-color: inherit;
 		--red-level-color: var(---error-color, #db4437);
@@ -85,6 +87,21 @@ export default css`
 		height: 19px;
 		flex: 0;
 		margin-left: 5px;
+	}
+
+	.description {
+		padding: 0 28px 16px 28px;
+		font-size: var(--description-font-size);
+		line-height: 1.4;
+		text-align: center;
+		white-space: normal;
+	}
+
+	.validity-period {
+		padding: 0 28px 16px 28px;
+		font-size: var(--validity-period-font-size);
+		text-align: center;
+		opacity: 0.9;
 	}
 
 	.headline-narrow,
